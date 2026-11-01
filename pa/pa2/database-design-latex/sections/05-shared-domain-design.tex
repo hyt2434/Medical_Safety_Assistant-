@@ -6,7 +6,7 @@ Shared-domain views group tables by business responsibility rather than by a sin
 
 The access model uses RBAC with optional multiple roles per user. The five initial business roles are patient, HCP, administrator, technical support, and medical reviewer. Permissions are assigned to roles through \db{ROLE_PERMISSIONS}; role grant and revocation should record who performed the action and when.
 
-\landscapediagram{domain-01-users-access-control.png}{Shared domain -- Users and Access Control ERD}{fig:domain-access}
+\landscapediagram{domain-01-users-access-control.png}{Shared domain - Users and Access Control ERD}{fig:domain-access}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Users and access-control tables}\label{tab:access-tables}\\
@@ -37,7 +37,7 @@ The medical reviewer is not a replacement for HCP. A qualified user may hold bot
 
 This domain is the controlled reference catalog. \db{DATASET_VERSIONS} groups version-specific rows. Medication products decompose into components and ingredients; safety mappings connect accepted components to safety-source identifiers; interaction pairs connect to participants and evidence.
 
-\landscapediagram{domain-02-medication-safety-catalog.png}{Shared domain -- Medication and Safety Catalog ERD}{fig:domain-catalog}
+\landscapediagram{domain-02-medication-safety-catalog.png}{Shared domain - Medication and Safety Catalog ERD}{fig:domain-catalog}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Medication and safety catalog tables}\label{tab:catalog-tables}\\
@@ -71,7 +71,7 @@ This domain is the controlled reference catalog. \db{DATASET_VERSIONS} groups ve
 
 Every source import belongs to a batch and version. Automated validation occurs before human review. The assigned medical reviewer makes explicit decisions on review items; evidence is linked to those items. Only an approved version receives a release record for operational use.
 
-\portraitdiagram{domain-03-data-import-review-release.png}{Shared domain -- Data Import, Review, and Release ERD}{fig:domain-data-governance}
+\portraitdiagram{domain-03-data-import-review-release.png}{Shared domain - Data Import, Review, and Release ERD}{fig:domain-data-governance}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Data import and review tables}\label{tab:governance-tables}\\
@@ -100,7 +100,7 @@ No separate \db{APPROVAL_DOCUMENTS} table is used. Organizational authorization 
 
 This domain connects the patient profile, care relationship, prescription entries, frozen medication list, safety assessment, HCP review, regimen, reminder, and adherence workflows.
 
-\portraitdiagram{domain-04-patient-medication-care.png}{Shared domain -- Patient Medication Care ERD}{fig:domain-patient-care}
+\portraitdiagram{domain-04-patient-medication-care.png}{Shared domain - Patient Medication Care ERD}{fig:domain-patient-care}
 
 The key boundary is \db{CARE_RELATIONSHIPS}: a professional role does not imply access to every patient. A review request references the relationship or equivalent assignment that grants scope. Regimens are connected to the entries they operationalize and to HCP reviews where professional approval is required.
 
@@ -108,7 +108,7 @@ The key boundary is \db{CARE_RELATIONSHIPS}: a professional role does not imply 
 
 The communication model separates professional care from application support. A patient opens a technical support ticket for login, upload, OCR, or failed processing. The ticket is assigned to a support user and receives support-specific messages. Clinical questions and safety interpretation remain in the HCP review conversation.
 
-\landscapediagram{domain-05-communication-technical-support.png}{Shared domain -- Communication and Technical Support ERD}{fig:domain-support}
+\landscapediagram{domain-05-communication-technical-support.png}{Shared domain - Communication and Technical Support ERD}{fig:domain-support}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Communication and technical-support tables}\label{tab:support-tables}\\
@@ -122,7 +122,7 @@ The communication model separates professional care from application support. A 
 \endhead
 \db{CONVERSATIONS} & HCP-review-bound clinical communication channel.\\
 \db{CONVERSATION_PARTICIPANTS} & Explicit membership of a clinical conversation.\\
-\db{MESSAGES} & Direct patient--HCP messages.\\
+\db{MESSAGES} & Direct patient-HCP messages.\\
 \db{SUPPORT_TICKETS} & User-reported technical/operational incident with category, priority, and status.\\
 \db{TICKET_ASSIGNMENTS} & Assignment and reassignment history for accountable support ownership.\\
 \db{SUPPORT_MESSAGES} & Ticket-specific user/support communication.\\

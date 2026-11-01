@@ -155,7 +155,7 @@ UC-18
 
 
 
-% ---------- 01. Access ----------
+% - 01. Access -
 
 % UC-01 - Sign In | from UC-01
 \clearpage
@@ -192,7 +192,7 @@ UC-18
 \textbf{Failure:} No authenticated session is created. \\ \hline
 \end{longtable}
 
-% ---------- 02. Patient safety ----------
+% - 02. Patient safety -
 
 % UC-02 - Enter and Confirm Medication Information | from UC-02
 \clearpage
@@ -253,7 +253,7 @@ UC-18
 \textbf{Basic Flow} &
 1. The patient requests a check using confirmed medication information.\par
 2. The system attempts to identify the medicines and their active ingredients from supported data.\par
-3. The system checks supported drug--drug interactions and duplicate active ingredients.\par
+3. The system checks supported drug-drug interactions and duplicate active ingredients.\par
 4. The system records risk levels for detected findings and the status of each supported or missing check.\par
 5. The system shows affected medicines, explanations, warnings, data limitations, and appropriate next steps. When no issue is found, it limits that statement to completed checks.\par
 6. The system saves the assessment, its status, and its time.
@@ -281,7 +281,7 @@ UC-18
 1. If only one medicine was supplied, pairwise checks are not applicable.\par
 2. If others are unresolved, their related checks remain unassessed; continue to step 4.
 \par
-\textbf{A5. Assessment fails (steps 2--4)}\par
+\textbf{A5. Assessment fails (steps 2-4)}\par
 1. The system reports a failed or incomplete assessment rather than a safe result.\par
 2. Any severe warning already found and its reminder restriction remain recorded.\par
 3. The patient may retry from step 1 or end the use case.
@@ -346,7 +346,7 @@ The use case ends.
 \textbf{Failure:} No new request or sharing access is created; previous safety warnings and gates stay in force. \\ \hline
 \end{longtable}
 
-% ---------- 03. HCP review ----------
+% - 03. HCP review -
 
 % UC-05 - Review Medication Safety Case | from UC-14 + UC-15 + UC-16
 \clearpage
@@ -427,7 +427,7 @@ The HCP is signed in with access to the selected request; the case was shared wi
 
 \end{longtable}
 
-% ---------- 04. Reminders and adherence ----------
+% - 04. Reminders and adherence -
 
 % UC-06 - Set Up Medication Reminders | from UC-07
 \clearpage
@@ -453,7 +453,7 @@ The HCP is signed in with access to the selected request; the case was shared wi
 \begin{longtable}{|p{0.20\textwidth}|p{0.71\textwidth}|}
 \hline
 \textbf{Alternative Flows} &
-\textbf{A1. Schedule is missing or unverified (steps 2--3)}\par
+\textbf{A1. Schedule is missing or unverified (steps 2-3)}\par
 1. The system does not activate a reminder without a verified schedule.\par
 2. The patient may correct the information or end the use case.
 \par
@@ -513,7 +513,7 @@ confirmation. The existing schedule
 remains unchanged.
 
 \par
-\textbf{A3. Patient cancels or update fails (steps 5--6)}\par
+\textbf{A3. Patient cancels or update fails (steps 5-6)}\par
 1. The system keeps the previous reminder settings and reports an error when relevant.
 \\* \hline
 \textbf{Pre-conditions} & The patient is signed in and owns an existing reminder. \\* \hline
@@ -585,7 +585,7 @@ remains unchanged.
 \textbf{Failure:} No record is changed. \\ \hline
 \end{longtable}
 
-% ---------- 05. Records and history ----------
+% - 05. Records and history -
 
 % UC-10 - View Medication and Safety History | from UC-06
 \clearpage
@@ -618,7 +618,7 @@ remains unchanged.
 \textbf{Failure:} No record or treatment is changed. \\ \hline
 \end{longtable}
 
-% ---------- 06. Chatbot and summaries ----------
+% - 06. Chatbot and summaries -
 
 % UC-11 
 \clearpage
@@ -734,7 +734,7 @@ remains unchanged.
 \textbf{Failure:} No new access is granted. \\ \hline
 \end{longtable}
 
-% ---------- 07. Dataset review ----------
+% - 07. Dataset review -
 
 % UC-14 - Review Medication Dataset Record | from UC-17 + UC-18
 \clearpage
@@ -761,7 +761,7 @@ remains unchanged.
 \begin{longtable}{|p{0.20\textwidth}|p{0.71\textwidth}|}
 \hline
 \textbf{Alternative Flows} &
-\textbf{A1. Source evidence is missing (steps 2--4)}\par
+\textbf{A1. Source evidence is missing (steps 2-4)}\par
 1. The reviewer selects Needs Correction or Reject and states the missing evidence.\par
 2. The system does not mark the record as clinically validated.
 \par
@@ -773,7 +773,7 @@ remains unchanged.
 1. The system asks the reviewer to reload the latest version before deciding.\par
 2. Return to step 2.
 \par
-\textbf{A4. Reviewer cancels or saving fails (steps 4--5)}\par
+\textbf{A4. Reviewer cancels or saving fails (steps 4-5)}\par
 1. No new decision is saved; the previous review status remains.
 \\* \hline
 \textbf{Pre-conditions} & The Dataset Reviewer is signed in and permitted to review the record. \\* \hline
@@ -781,7 +781,7 @@ remains unchanged.
 \textbf{Failure:} No new review decision is saved. \\ \hline
 \end{longtable}
 
-% ---------- 08. Administration ----------
+% - 08. Administration -
 
 % UC-15 - Manage User Accounts and Roles | from UC-19 + UC-20
 \clearpage
@@ -811,7 +811,7 @@ remains unchanged.
 1. The system denies the request without granting extra permissions.\par
 2. The use case ends or the Administrator selects another valid action.
 \par
-\textbf{A3. Administrator cancels or save fails (steps 5--6)}\par
+\textbf{A3. Administrator cancels or save fails (steps 5-6)}\par
 1. The previous account and role settings remain unchanged.\par
 2. The system reports a save error when relevant.
 \\* \hline
@@ -849,7 +849,7 @@ remains unchanged.
 \textbf{Failure:} No audit or patient data is changed. \\ \hline
 \end{longtable}
 
-% ---------- 09. Technical support ----------
+% - 09. Technical support -
 
 % UC-17 - Report Technical Issue | from UC-22
 \clearpage
@@ -878,7 +878,7 @@ remains unchanged.
 1. The system requests removal or masking of the private data before submission.\par
 2. Return to step 3.
 \par
-\textbf{A3. User cancels or ticket creation fails (steps 4--5)}\par
+\textbf{A3. User cancels or ticket creation fails (steps 4-5)}\par
 1. No successful ticket submission is reported.\par
 2. The user may retry after an error or end the use case.
 \\* \hline

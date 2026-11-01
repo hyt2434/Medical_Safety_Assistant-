@@ -49,9 +49,9 @@ Patient-generated data such as medication entries and snapshots remains separate
 
 \subsubsection{Clinical Communication versus Technical Support}
 
-\db{CONVERSATIONS} and \db{MESSAGES} support direct patient--HCP discussion within a review case. \db{SUPPORT_TICKETS} and \db{SUPPORT_MESSAGES} support login, upload, OCR, and application incidents. Technical support is not placed between the patient and the HCP.
+\db{CONVERSATIONS} and \db{MESSAGES} support direct patient-HCP discussion within a review case. \db{SUPPORT_TICKETS} and \db{SUPPORT_MESSAGES} support login, upload, OCR, and application incidents. Technical support is not placed between the patient and the HCP.
 
 \subsection{Cardinality Notation}
 
-The diagrams use Crow's Foot notation. A circle denotes an optional relationship (minimum zero), a bar denotes exactly one at that end, and the crow's foot denotes many. For example, \db{USERS ||--o\{ SUPPORT_TICKETS} means one user may create zero or many tickets, while every ticket has one creator. These symbols describe logical minimum and maximum participation; corresponding nullability, uniqueness, and foreign-key constraints must be implemented in the physical schema.
+The diagrams use Crow's Foot notation. A circle denotes an optional relationship (minimum zero), a bar denotes exactly one at that end, and the crow's foot denotes many. For example, \db{USERS ||-o\{ SUPPORT_TICKETS} means one user may create zero or many tickets, while every ticket has one creator. These symbols describe logical minimum and maximum participation; corresponding nullability, uniqueness, and foreign-key constraints must be implemented in the physical schema.
 

@@ -2,11 +2,11 @@
 
 The following views show the tables each product module reads or writes. Shared entities may appear in more than one view because module ownership and relational ownership are not identical.
 
-\subsection{Module 1 -- Medication Intake}
+\subsection{Module 1 - Medication Intake}
 
 Module 1 captures medication information from text, image, or document input. A user creates \db{MEDICATION_INTAKES}; each submission may contain \db{INTAKE_DOCUMENTS}. One or more \db{EXTRACTION_RUNS} consume those documents through \db{EXTRACTION_RUN_INPUTS}. Parsed rows become \db{MEDICATION_ENTRIES}, optionally grouped by \db{PRESCRIPTIONS}, and the patient records confirmation or correction in \db{ENTRY_CONFIRMATIONS}.
 
-\portraitdiagram{module-01-medication-intake.png}{Module 1 -- Medication Intake ERD}{fig:module-intake}
+\portraitdiagram{module-01-medication-intake.png}{Module 1 - Medication Intake ERD}{fig:module-intake}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Module 1 tables and responsibilities}\label{tab:module1-tables}\\
@@ -29,11 +29,11 @@ Module 1 captures medication information from text, image, or document input. A 
 \bottomrule
 \end{longtable}
 
-\subsection{Module 2 -- Medication Identification and Reference}
+\subsection{Module 2 - Medication Identification and Reference}
 
 Module 2 resolves a confirmed medication entry against one released medication catalog. \db{ENTRY_IDENTIFICATIONS} records an identification attempt and selected result; \db{IDENTIFICATION_CANDIDATES} retains alternatives and scores. The selected \db{MEDICATIONS} row expands through components, ingredients, strengths, indications, and conditions.
 
-\landscapediagram{module-02-medication-identification-reference.png}{Module 2 -- Medication Identification and Reference ERD}{fig:module-identification}
+\landscapediagram{module-02-medication-identification-reference.png}{Module 2 - Medication Identification and Reference ERD}{fig:module-identification}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Module 2 principal tables and responsibilities}\label{tab:module2-tables}\\
@@ -59,11 +59,11 @@ Module 2 resolves a confirmed medication entry against one released medication c
 \bottomrule
 \end{longtable}
 
-\subsection{Module 3 -- Medication Safety Assessment}
+\subsection{Module 3 - Medication Safety Assessment}
 
 Module 3 freezes the patient's current medication list in \db{MEDICATION_LIST_SNAPSHOTS}. \db{SNAPSHOT_ITEMS} reference the exact entries and identifications included. A \db{SAFETY_ASSESSMENTS} row binds that snapshot to a dataset release. Pairwise results are retained in \db{ASSESSMENT_PAIR_RESULTS}; user-facing findings are stored in \db{SAFETY_FINDINGS} and linked to affected items through \db{FINDING_ITEMS}.
 
-\landscapediagram{module-03-medication-safety-assessment.png}{Module 3 -- Medication Safety Assessment ERD}{fig:module-safety}
+\landscapediagram{module-03-medication-safety-assessment.png}{Module 3 - Medication Safety Assessment ERD}{fig:module-safety}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Module 3 principal tables and responsibilities}\label{tab:module3-tables}\\
@@ -89,11 +89,11 @@ Module 3 freezes the patient's current medication list in \db{MEDICATION_LIST_SN
 \bottomrule
 \end{longtable}
 
-\subsection{Module 4 -- HCP Review}
+\subsection{Module 4 - HCP Review}
 
 Module 4 creates an explicit request for professional interpretation of a safety assessment. The request records patient, assessment, care relationship, assignee, priority, and status. \db{HCP_REVIEWS} retains the professional decision. A linked conversation permits the patient and assigned HCP to communicate directly.
 
-\portraitdiagram{module-04-hcp-review.png}{Module 4 -- HCP Review ERD}{fig:module-hcp-review}
+\portraitdiagram{module-04-hcp-review.png}{Module 4 - HCP Review ERD}{fig:module-hcp-review}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Module 4 tables and responsibilities}\label{tab:module4-tables}\\
@@ -114,11 +114,11 @@ Module 4 creates an explicit request for professional interpretation of a safety
 \bottomrule
 \end{longtable}
 
-\subsection{Module 5 -- Medication Reminders}
+\subsection{Module 5 - Medication Reminders}
 
 Module 5 schedules reminders only from a regimen associated with patient entries and, where required, HCP review. Eligibility checks prevent an unconfirmed or clinically blocked item from producing reminder events. Adherence is recorded separately from delivery events.
 
-\portraitdiagram{module-05-medication-reminders.png}{Module 5 -- Medication Reminders ERD}{fig:module-reminders}
+\portraitdiagram{module-05-medication-reminders.png}{Module 5 - Medication Reminders ERD}{fig:module-reminders}
 
 \begin{longtable}{L{4.5cm}L{10.8cm}}
 \caption{Module 5 tables and responsibilities}\label{tab:module5-tables}\\
