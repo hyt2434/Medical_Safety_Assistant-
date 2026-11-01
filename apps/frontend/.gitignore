@@ -1,6 +1,0 @@
-node_modules/
-.npm-cache/
-dist/
-artifacts/
-test-results/
-*.tsbuildinfo

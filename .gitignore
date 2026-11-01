@@ -1,4 +1,26 @@
-.vscode/
+# Shared ignore rules for the repository (maintain this file only).
+/.vscode/
+
+# Local configuration; keep distributable examples
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# JavaScript dependencies and caches, including archived prototypes
+node_modules/
+.npm-cache/
+.vite/
+*.tsbuildinfo
 
 # LaTeX build artifacts
 *.aux
@@ -29,23 +51,24 @@
 # Keep generated PDFs under version control when needed for submission.
 
 # Frontend dependencies and generated output
-/apps/frontend/node_modules/
-/apps/frontend/.npm-cache/
 /apps/frontend/dist/
 /apps/frontend/test-results/
 /apps/frontend/playwright-report/
 /apps/frontend/artifacts/
-/apps/frontend/.vite/
 /apps/frontend/coverage/
-/apps/frontend/*.tsbuildinfo
 
-# Legacy frontend location
-/src/frontend/node_modules/
-/src/frontend/dist/
-/src/frontend/test-results/
-/src/frontend/playwright-report/
-/src/frontend/artifacts/
-/src/frontend/*.tsbuildinfo
+# Test output
+/tests/artifacts/
+
+# Document-specific output (other report PDFs/images remain trackable)
+/docs/latex/main.pdf
+/docs/latex/**/*.acn
+/docs/latex/**/*.acr
+/docs/latex/**/*.alg
+/docs/latex/**/*.dvi
+/docs/latex/**/*.ps
+/pa/pa1/vision-document-latex/**/preview-*.png
+/pa/pa1/project-plan-latex/**/preview-*.png
 # Temporary files and local datasets
 /tmp/
-data/local/
+/data/local/
